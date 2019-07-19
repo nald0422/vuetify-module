@@ -1,90 +1,150 @@
 <template>
- <v-app>
-  <v-system-bar window dark>
-   <v-spacer></v-spacer>
-   <v-icon>remove</v-icon>
-   <v-icon>check_box_outline_blank</v-icon>
-   <v-icon>close</v-icon>
-  </v-system-bar>
-  <v-navigation-drawer stateless value="true">
-   <v-list>
-    <v-list-tile>
-     <v-list-tile-action>
-      <v-icon>home</v-icon>
-     </v-list-tile-action>
-     <v-list-tile-title>Home</v-list-tile-title>
-    </v-list-tile>
-
-    <v-list-tile>
-     <v-list-tile-action>
-      <v-icon>note</v-icon>
-     </v-list-tile-action>
-     <v-list-tile-title>Area Manager Module</v-list-tile-title>
-    </v-list-tile>
-
-    <v-list-group prepend-icon="account_circle" value="true">
-     <template v-slot:activator>
-      <v-list-tile>
-       <v-list-tile-title>Users</v-list-tile-title>
+ <div id="app">
+  <v-app>
+   <v-navigation-drawer app fixed clipped>
+    <v-list>
+     <v-list-tile to="/about">
+      <v-list-tile-action>
+       <v-icon>home</v-icon>
+      </v-list-tile-action>
+      <v-list-tile-content>
+       <v-list-tile-title>About</v-list-tile-title>
+      </v-list-tile-content>
+     </v-list-tile>
+     <v-list-tile to="/tutorial">
+      <v-list-tile-action>
+       <v-icon>book</v-icon>
+      </v-list-tile-action>
+      <v-list-tile-content>
+       <v-list-tile-title>Vue demo</v-list-tile-title>
+      </v-list-tile-content>
+     </v-list-tile>
+     <v-list-tile to="/login">
+      <v-list-tile-action><v-icon>account_circle</v-icon></v-list-tile-action>
+      <v-list-tile-content>
+       <v-list-tile-title>Login</v-list-tile-title>
+      </v-list-tile-content>
+     </v-list-tile>
+     <v-list-tile to="/approvedApplications">
+      <v-list-tile-action><v-icon>list_alt</v-icon></v-list-tile-action>
+      <v-list-tile-content>
+       <v-list-tile-title>Approved Applications</v-list-tile-title>
+      </v-list-tile-content>
+     </v-list-tile>
+    </v-list>
+   </v-navigation-drawer>
+   <v-toolbar app fixed clipped-left>
+    <v-menu :nudge-width="-100">
+     <v-toolbar-title slot="activator">Toolbar</v-toolbar-title>
+     <v-list>
+      <v-list-tile :to="'/page1'">Settings</v-list-tile>
+      <v-list-tile :to="'/page2'">
+       <v-list-tile-title v-text="'Account'"></v-list-tile-title>
       </v-list-tile>
-     </template>
-     <v-list-group no-action sub-group value="true">
-      <template v-slot:activator>
-       <v-list-tile>
-        <v-list-tile-title>Admin</v-list-tile-title>
-       </v-list-tile>
-      </template>
-
-      <v-list-tile v-for="(admin, i) in admins" :key="i">
-       <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
-       <v-list-tile-action>
-        <v-icon v-text="admin[1]"></v-icon>
-       </v-list-tile-action>
-      </v-list-tile>
-     </v-list-group>
-
-     <v-list-group sub-group no-action>
-      <template v-slot:activator>
-       <v-list-tile>
-        <v-list-tile-title>Actions</v-list-tile-title>
-       </v-list-tile>
-      </template>
-      <v-list-tile v-for="(crud, i) in cruds" :key="i">
-       <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-       <v-list-tile-action>
-        <v-icon v-text="crud[1]"></v-icon>
-       </v-list-tile-action>
-      </v-list-tile>
-     </v-list-group>
-    </v-list-group>
-   </v-list>
-  </v-navigation-drawer>
-
-  <v-content>
-   <v-component>
-    <router-view />
-   </v-component>
-  </v-content>
- </v-app>
+     </v-list>
+    </v-menu>
+   </v-toolbar>
+   <v-content>
+    <v-container fluid>
+     <v-fade-transition mode="out-in">
+      <router-view></router-view>
+     </v-fade-transition>
+    </v-container>
+   </v-content>
+  </v-app>
+ </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+// import HelloWorld from "./components/HelloWorld";
+import HelloWorld from "@/components/HelloWorld";
 
 export default {
  name: "App",
  components: {
-  HelloWorld
+  //   HelloWorld
  },
  data() {
   return {
+   drawer: {
+    // sets the open status of the drawer
+    open: true,
+    // sets if the drawer is shown above (false) or below (true) the toolbar
+    clipped: true,
+    // sets if the drawer is CSS positioned as 'fixed'
+    fixed: false,
+    // sets if the drawer remains visible all the time (true) or not (false)
+    permanent: true,
+    // sets the drawer to the mini variant, showing only icons, of itself (true)
+    // or showing the full drawer (false)
+    mini: true
+   },
+   toolbar: {
+    //
+    fixed: false,
+    // sets if the toolbar contents is leaving space for drawer (false) or not (true)
+    clippedLeft: true
+   },
+   footer: {
+    // sets the CSS position of the footer
+    fixed: true,
+    // sets if the footer is full width (true) or gives space to the drawer (false)
+    clippedLeft: true
+   },
+   message: "Hello",
+   input: "",
+   link: "http://google.com",
+   counter: 0,
+   x: 0,
+   y: 0
    //
   };
+ },
+
+ props: {
+  source: String
  },
 
  methods: {
   testing() {
    warn("CLICKED!");
+  },
+
+  toggleDrawer() {
+   if (this.drawer.permanent) {
+    this.drawer.permanent = !this.drawer.permanent;
+    // set the clipped state of the drawer and toolbar
+    this.drawer.clipped = true;
+    this.toolbar.clippedLeft = true;
+   } else {
+    // normal drawer
+    this.drawer.open = !this.drawer.open;
+   }
+  },
+
+  makeDrawerPermanent() {
+   this.drawer.permanent = true;
+   // set the clipped state of the drawer and toolbar
+   this.drawer.clipped = false;
+   this.toolbar.clippedLeft = false;
+  },
+  // toggles the drawer variant (mini/full)
+  toggleMiniDrawer() {
+   this.drawer.mini = !this.drawer.mini;
+  },
+
+  result() {
+   return this.counter > 5 ? "Greater than 5" : "Less than 5";
+  },
+  sayHello() {
+   return "Hello World!";
+  },
+  increase(step) {
+   this.counter += step;
+  },
+  updateCoordinates: function(event) {
+   this.x = event.clientX;
+   this.y = event.clientY;
   }
  }
 };

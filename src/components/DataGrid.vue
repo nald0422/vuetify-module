@@ -47,7 +47,6 @@ import {
  DxValueFormat
 } from "devextreme-vue/data-grid";
 
-import { createStore } from "devextreme-aspnet-data-nojquery";
 import axios from "axios";
 
 const url = "http://localhost:8080/getApproved";

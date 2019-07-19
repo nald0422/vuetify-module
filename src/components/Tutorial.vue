@@ -19,7 +19,7 @@
     </p>
    </div>
    <div class="col-sm">
-    <input type="text" v-model="input" />
+    <v-input type="text" v-model="input" hint="Input"/>
     <p>{{input}}</p>
    </div>
    <div class="col-sm">

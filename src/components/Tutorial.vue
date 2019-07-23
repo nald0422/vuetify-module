@@ -1,35 +1,5 @@
 <template>
- <div class="container-fluid m-3">
-  <div class="row">
-   <div class="col-sm">
-    <input v-model="message" />
-   </div>
-   <div class="col-sm">
-    <p>{{ message }}</p>
-   </div>
-   <div class="col-sm">
-    <p>Value returned by method: {{ sayHello() }}</p>
-   </div>
-  </div>
-  <hr />
-  <div class="row">
-   <div class="col-sm">
-    <p>
-     <a v-bind:href="link">Google</a>
-    </p>
-   </div>
-   <div class="col-sm">
-    <v-input type="text" v-model="input" hint="Input"/>
-    <p>{{input}}</p>
-   </div>
-   <div class="col-sm">
-    <v-btn v-on:click="counter++">Increase</v-btn>
-    <v-btn v-on:click="counter--">Decrease</v-btn>
-    <p>Counter: {{ counter }}</p>
-    <p>Result: {{ result() }}</p>
-   </div>
-  </div>
- </div>
+<my-cmp />
 </template>
 
 <script>

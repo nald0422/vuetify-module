@@ -1,7 +1,5 @@
 <template>
- <div>
-  <p>Hello world!</p>
- </div>
+ <app-servers></app-servers>
 </template>
 
 <script>

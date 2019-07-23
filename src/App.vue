@@ -16,19 +16,15 @@
        <v-icon>book</v-icon>
       </v-list-tile-action>
       <v-list-tile-content>
-       <v-list-tile-title>Vue demo</v-list-tile-title>
+       <v-list-tile-title>Vue demo [Global Component]</v-list-tile-title>
       </v-list-tile-content>
      </v-list-tile>
-     <v-list-tile to="/login">
-      <v-list-tile-action><v-icon>account_circle</v-icon></v-list-tile-action>
+     <v-list-tile to="/serverStatus">
+      <v-list-tile-action>
+       <v-icon>assignment</v-icon>
+      </v-list-tile-action>
       <v-list-tile-content>
-       <v-list-tile-title>Login</v-list-tile-title>
-      </v-list-tile-content>
-     </v-list-tile>
-     <v-list-tile to="/approvedApplications">
-      <v-list-tile-action><v-icon>list_alt</v-icon></v-list-tile-action>
-      <v-list-tile-content>
-       <v-list-tile-title>Approved Applications</v-list-tile-title>
+       <v-list-tile-title>Server Status [Local Component]</v-list-tile-title>
       </v-list-tile-content>
      </v-list-tile>
     </v-list>

@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 // import Login from '@/components/Login'
 // import DataGrid from '@/components/DataGrid'
-import Tutorial from '@/components/Tutorial.vue'
-import Test from '@/components/test.vue'
+import Tutorial from '@/views/VueDemo.vue'
+import ServerStatus from '@/views/ComponentDemo.vue'
 
 Vue.use(Router)
 
@@ -21,14 +21,14 @@ export default new Router({
         //     component: DataGrid
         // },
         {
+            path: '/serverStatus',
+            name: 'serverStatus',
+            component: ServerStatus
+        },
+        {
             path: '/tutorial',
             name: 'tutorial',
             component: Tutorial
-        },
-        {
-            path: '/test',
-            name: 'test',
-            component: Test
         },
         {
             path: '/about',

@@ -1,7 +1,28 @@
 <template>
  <div id="app">
-  <v-app>
-   <v-navigation-drawer app fixed clipped>
+  <div id="nav">
+   <router-link to="/about" class="routerLink">About</router-link>
+   <router-link to="/tutorial" class="routerLink">Vue demo [Global Component]</router-link>
+   <router-link to="/serverStatus" class="routerLink">Server Status [Local Component]</router-link>
+   <router-link to="/userApps" class="routerLink">User Application [Communicate Components]</router-link>
+  </div>
+  <hr />
+  <router-view />
+  <!-- <ul class="nav">
+   <li class="nav-item">
+    <a class="nav-link active" href="/about">About</a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link" href="/tutorial">Vue demo [Global Component]</a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link" href="/serverStatus">Server Status [Local Component]</a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link" href="/userApps">User Application [Communicate Components]</a>
+   </li>
+  </ul>-->
+  <!-- <v-navigation-drawer app fixed clipped>
     <v-list>
      <v-list-tile to="/about">
       <v-list-tile-action>
@@ -27,9 +48,17 @@
        <v-list-tile-title>Server Status [Local Component]</v-list-tile-title>
       </v-list-tile-content>
      </v-list-tile>
+     <v-list-tile to="/userApps">
+      <v-list-tile-action>
+       <v-icon>person</v-icon>
+      </v-list-tile-action>
+      <v-list-tile-content>
+       <v-list-tile-title>User Application [Communicate Components]</v-list-tile-title>
+      </v-list-tile-content>
+     </v-list-tile>
     </v-list>
-   </v-navigation-drawer>
-   <v-toolbar app fixed clipped-left>
+  </v-navigation-drawer>-->
+  <!-- <v-toolbar app fixed clipped-left>
     <v-menu :nudge-width="-100">
      <v-toolbar-title slot="activator">Toolbar</v-toolbar-title>
      <v-list>
@@ -39,15 +68,7 @@
       </v-list-tile>
      </v-list>
     </v-menu>
-   </v-toolbar>
-   <v-content>
-    <v-container fluid>
-     <v-fade-transition mode="out-in">
-      <router-view></router-view>
-     </v-fade-transition>
-    </v-container>
-   </v-content>
-  </v-app>
+  </v-toolbar>-->
  </div>
 </template>
 
@@ -145,3 +166,21 @@ export default {
  }
 };
 </script>
+
+<style scoped lang="scss">
+#nav {
+ padding: 30px;
+ a {
+  font-weight: bold;
+  color: #2c3e50;
+  &.router-link-exact-active {
+   color: #42b983;
+  }
+ }
+}
+
+.routerLink {
+ margin-right: 20px;
+  padding: 20px;
+}
+</style>

@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 // import DataGrid from '@/components/DataGrid'
 import Tutorial from '@/views/VueDemo.vue'
 import ServerStatus from '@/views/ComponentDemo.vue'
+import UserApp from '@/views/User.vue'
 
 Vue.use(Router)
 
@@ -20,6 +21,11 @@ export default new Router({
         //     name: 'approvedApplications',
         //     component: DataGrid
         // },
+        {
+            path: '/userApps',
+            name: 'userApps',
+            component: UserApp
+        },
         {
             path: '/serverStatus',
             name: 'serverStatus',

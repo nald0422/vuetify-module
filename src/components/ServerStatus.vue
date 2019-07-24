@@ -1,8 +1,12 @@
 <template>
  <div>
-  <p>Server Status: {{ status }}</p>
-  <hr />
-  <v-btn color="warning" @click="changeStatus">Change Status</v-btn>
+  <div class="container">
+   <div class="row" style="margin-bottom: 5px;">
+    <p>Server Status: {{ status }}</p>
+    <hr />
+    <button type="button" class="btn btn-warning" @click="changeStatus">Change Status</button>
+   </div>
+  </div>
  </div>
 </template>
 

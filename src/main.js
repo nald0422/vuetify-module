@@ -1,13 +1,13 @@
 import Vue from 'vue'
-import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueDemo from '@/components/Tutorial.vue'
-import {
-    Verify
-} from 'crypto';
+import 'bootstrap';
+import 'jquery';
+import 'popper.js';
 
+import './assets/app.scss'
+import VueDemo from '@/components/Tutorial.vue'
 import HelloWorld from "@/components/HelloWorld";
 
 Vue.component('app-servers', VueDemo)

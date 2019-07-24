@@ -1,6 +1,6 @@
 <template>
  <div id="app">
-  <div class="container-fluid m-3">
+  <div class="container">
    <div class="row">
     <div class="col-sm">
      <input v-model="message" />
@@ -20,8 +20,15 @@
      </p>
     </div>
     <div class="col-sm">
-     <v-btn color="info" v-on:click="counter++">Increase</v-btn>
-     <v-btn color="info" v-on:click="counter--">Decrease</v-btn>
+     <button
+      type="button"
+      class="btn btn-outline-primary"
+      v-on:click="counter++"
+      style="margin-right: 5px;"
+     >Increase</button>
+     <button type="button" class="btn btn-outline-danger" v-on:click="counter--">Decrease</button>
+    </div>
+    <div class="col-sm">
      <p>Counter: {{ counter }}</p>
      <p>Result: {{ result() }}</p>
     </div>

@@ -1,17 +1,12 @@
 <template>
-    <div>
-        <p>
-            AAAAAAAAAAAAAAA
-        </p>
-    </div>
+  <div>
+    <p class="paragraph">Parent Container</p>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
+<style scoped>
 </style>

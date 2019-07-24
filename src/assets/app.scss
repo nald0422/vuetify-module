@@ -1,5 +1,9 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 body {
-    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #e6f2ff);
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #e6f2ff);
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
 }

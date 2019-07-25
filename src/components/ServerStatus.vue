@@ -2,9 +2,12 @@
  <div>
   <div class="container">
    <div class="row" style="margin-bottom: 5px;">
-    <p>Server Status: {{ status }}</p>
-    <hr />
-    <button type="button" class="btn btn-warning" @click="changeStatus">Change Status</button>
+    <div class="col-6">
+     <p>Server Status: {{ status }}</p>
+    </div>
+    <div class="col-6">
+     <button type="button" class="btn btn-warning" @click="changeStatus">Change Status</button>
+    </div>
    </div>
   </div>
  </div>
@@ -23,7 +26,7 @@ export default {
    if (this.status.toLowerCase() == "critical") {
     this.status = "Normal";
    } else if (this.status.toLowerCase() == "normal") {
-    this.status = "critical";
+    this.status = "Critical";
    }
   }
  }

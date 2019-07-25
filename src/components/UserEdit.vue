@@ -1,19 +1,19 @@
 <template>
-    <div>
-        <div class="container-fluid">
-            <p>
-                Child Container
-            </p>
-        </div>
-    </div>
+ <div class="child">
+  <h1>Child Container</h1>
+  <p>Content</p>
+ </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
+<style scoped>
+.child {
+ background-color: khaki;
+ border-style: solid;
+ border-width: 0.20ch;
+ padding: 20px;
+}
 </style>

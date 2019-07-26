@@ -6,6 +6,7 @@ import Home from './views/Home.vue'
 import Tutorial from '@/views/VueDemo.vue'
 import ServerStatus from '@/views/ComponentDemo.vue'
 import UserApp from '@/views/User.vue'
+import Quote from '@/views/Quote.vue'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
             path: '/tutorial',
             name: 'tutorial',
             component: Tutorial
+        },
+        {
+            path: '/quote',
+            name: 'quote',
+            component: Quote
         },
         {
             path: '/about',

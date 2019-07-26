@@ -4,7 +4,11 @@
    <div class="row">
     <div class="col-xs-12 col-sm-12">
      <h1>The User Component</h1>
-     <p>I'm an awesome User!</p>
+     <p>
+      I'm an awesome User!
+      <br />
+      Age: {{userAge}}
+     </p>
      <button type="button" class="btn btn-primary" @click="changeName">Change my name: {{userName}}</button>
     </div>
    </div>
@@ -12,10 +16,15 @@
    <div class="row" style="margin-top: 20px;">
     <div class="col-xs-12 col-sm-6">
      <!-- v-on:nameReset="userName = $event" -->
-     <appUserDetail v-bind:name="userName" @nameReset="userName = $event" :resetFn="resetName()"></appUserDetail>
+     <appUserDetail
+      v-bind:name="userName"
+      v-bind:age="userAge"
+      @nameReset="userName = $event"
+      v-bind:resetFn="resetName"
+     ></appUserDetail>
     </div>
     <div class="col-xs-12 col-sm-6">
-     <appUserEdit></appUserEdit>
+     <appUserEdit v-bind:age="userAge" v-bind:editAge="editUserAge" v-bind:resetAge="resetUserAge"></appUserEdit>
     </div>
    </div>
   </div>
@@ -29,7 +38,8 @@ import UserEdit from "./UserEdit.vue";
 export default {
  data: function() {
   return {
-   userName: "Max"
+   userName: "Max",
+   userAge: 27
   };
  },
 
@@ -41,9 +51,17 @@ export default {
     this.userName = "Max";
    }
   },
-
   resetName() {
-   this.userName = "Sam";
+   this.userName = "Max";
+   console.log("Reset Function");
+  },
+
+  editUserAge() {
+   this.userAge = 30;
+  },
+
+  resetUserAge() {
+   this.userAge = 27;
   }
  },
 

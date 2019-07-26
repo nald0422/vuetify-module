@@ -29,7 +29,7 @@
      <button type="button" class="btn btn-outline-danger" v-on:click="counter--">Decrease</button>
     </div>
     <div class="col-sm">
-     <p>Counter: {{ counter }}</p>
+     <p>Counter: {{ counter }}</p> 
      <p>Result: {{ result() }}</p>
     </div>
    </div>

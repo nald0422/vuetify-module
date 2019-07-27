@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1 slot="title">Quote</h1>
-    <p slot="content">A Wonderful Quote</p>
+    <h1 slot="title">Quote B</h1>
     <!-- <slot name="title"></slot>
     <slot name="content"></slot>-->
   </div>

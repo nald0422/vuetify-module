@@ -14,6 +14,9 @@ export const eventBus = new Vue({
     methods: {
         changeAge(age) {
             this.$emit('ageEdit', age)
+        },
+        resetAge(age) {
+            this.$emit('ageReset', age)
         }
     }
 });

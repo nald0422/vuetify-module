@@ -1,21 +1,31 @@
 <template>
  <div class="child">
   <h1>Child Container</h1>
-  <p>Age: {{childAge}}</p>
   <div class="container">
+   <hr />
+   <h5>Callback function</h5>
    <button
     type="button"
     class="btn btn-primary"
     @click="editAge()"
     style="margin-right: 5px;"
-   >Edit Age (Callback Function)</button>
+   >Edit age</button>
    <button
     type="button"
     class="btn btn-primary"
     @click="resetAge()"
     style="margin-right: 5px;"
-   >Reset Age</button>
-   <button type="button" class="btn btn-primary" @click="editUserAge">Event Bus</button>
+   >Reset age</button>
+   <hr />
+   <h5>Event Bus</h5>
+   <p>Age: {{childAge}}</p>
+   <button
+    type="button"
+    class="btn btn-primary"
+    @click="editUserAge"
+    style="margin-right: 5px;"
+   >Edit User Age</button>
+   <button type="button" class="btn btn-primary" @click="resetUserAge">Reset User Age</button>
   </div>
  </div>
 </template>
@@ -42,6 +52,11 @@ export default {
    this.childAge = 30;
    console.log("Child Age: " + this.age);
    eventBus.$emit("editAge", this.childAge);
+  },
+
+  resetUserAge() {
+   this.childAge = 27;
+   eventBus.$emit("resetAge", this.childAge);
   }
  }
 };

@@ -35,11 +35,14 @@
 import UserDetail from "./UserDetail.vue";
 import UserEdit from "./UserEdit.vue";
 
+import { eventBus } from "../main.js";
+
 export default {
  data: function() {
   return {
    userName: "Max",
-   userAge: 27
+   userAge: 27,
+   userEventBus: ""
   };
  },
 
@@ -63,6 +66,12 @@ export default {
   resetUserAge() {
    this.userAge = 27;
   }
+ },
+
+ created() {
+  eventBus.$on("editAge", age => {
+   this.userEventBus = age;
+  });
  },
 
  components: {

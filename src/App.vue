@@ -5,7 +5,7 @@
    <router-link to="/tutorial" class="routerLink">Vue demo [Global Component]</router-link>
    <router-link to="/serverStatus" class="routerLink">Server Status [Local Component]</router-link>
    <router-link to="/userApps" class="routerLink">User Application [Communicate Components]</router-link>
-   <router-link to="/quote" class="routerLink">Quote [Advance Components]</router-link>
+   <router-link to="/quote" class="routerLink">Quote [Advanced Components]</router-link>
   </div>
   <hr />
   <router-view />

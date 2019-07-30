@@ -29,27 +29,26 @@
      </keep-alive>
     </div>
    </div>
-   <div class="row">
-    <div class="table-responsive">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col">User Id</th>
-        <th scope="col">Id</th>
-        <th scope="col">Title</th>
-        <th scope="col">Body</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr v-for="item in data" :key="item.id">
-        <td>{{item.userId}}</td>
-        <td>{{item.id}}</td>
-        <td>{{item.title}}</td>
-        <td>{{item.body}}</td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
+   <div class="table-responsive">
+    <h3 class="tableTitle" style="color: dodgerblue;">TABLE FROM WEB API</h3>
+    <table class="table">
+     <thead>
+      <tr>
+       <th scope="col">User Id</th>
+       <th scope="col">Id</th>
+       <th scope="col">Title</th>
+       <th scope="col">Body</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr v-for="item in data" :key="item.id">
+       <td>{{item.userId}}</td>
+       <td>{{item.id}}</td>
+       <td>{{item.title}}</td>
+       <td>{{item.body}}</td>
+      </tr>
+     </tbody>
+    </table>
    </div>
   </div>
  </div>
@@ -88,4 +87,14 @@ export default {
 </script>
 
 <style>
+.table-responsive {
+ border: 1px solid #ccc;
+ box-shadow: 1px 1px 2px black;
+ padding: 30px;
+ margin: 30px auto;
+}
+
+.tableTitle {
+ font-family: "Courier New", Courier, monospace;
+}
 </style>

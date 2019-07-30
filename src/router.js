@@ -43,6 +43,11 @@ export default new Router({
             component: Quote
         },
         {
+            path: '/quoteApp',
+            name: 'quoteApp',
+            component: Quote
+        },
+        {
             path: '/about',
             name: 'about',
             // route level code-splitting

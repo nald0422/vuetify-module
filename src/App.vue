@@ -182,6 +182,6 @@ export default {
 
 .routerLink {
  margin-right: 20px;
-  padding: 20px;
+ padding: 20px;
 }
 </style>

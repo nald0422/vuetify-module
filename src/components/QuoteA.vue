@@ -5,8 +5,14 @@
     <div class="col-12">
      <div class="form-group">
       <label for="quote">Quote:</label>
-      <textarea class="form-control" rows="5" id="quote"></textarea>
-      <button class="btn btn-primary" style="margin-top: 10px; float: right">Encode</button>
+      <textarea class="form-control" rows="5" id="quote" v-model="quote"></textarea>
+      <p>{{quote}}</p>
+      <button
+       class="btn btn-primary"
+       style="margin-top: 10px; float: right"
+       @click="encodeQuote(quote)"
+      >Encode</button>
+      <!-- <p v-for="q in quotes" :key="q.id">{{q.id}}</p> -->
      </div>
     </div>
    </div>
@@ -21,8 +27,18 @@
 export default {
  data: function() {
   return {
+   quote: "",
    quotes: []
   };
+ },
+
+ methods: {
+  encodeQuote(inputQuote) {
+   this.quotes.push(inputQuote);
+   for (var i = 0; i < this.quotes.length; i++) {
+    console.log(this.quotes[i]);
+   }
+  }
  }
 };
 </script>

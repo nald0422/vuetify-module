@@ -7,6 +7,7 @@ import Tutorial from '@/views/VueDemo.vue'
 import ServerStatus from '@/views/ComponentDemo.vue'
 import UserApp from '@/views/User.vue'
 import Quote from '@/views/Quote.vue'
+import Forms from '@/views/Forms.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
             component: UserApp
         },
         {
+            path: '/inputForms',
+            name: 'inputForms',
+            component: Forms
+        },
+        {
             path: '/serverStatus',
             name: 'serverStatus',
             component: ServerStatus
@@ -40,11 +46,6 @@ export default new Router({
         {
             path: '/quote',
             name: 'quote',
-            component: Quote
-        },
-        {
-            path: '/quoteApp',
-            name: 'quoteApp',
             component: Quote
         },
         {

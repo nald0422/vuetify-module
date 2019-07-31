@@ -6,6 +6,7 @@
    <router-link to="/serverStatus" class="routerLink">Server Status [Local Component]</router-link>
    <router-link to="/userApps" class="routerLink">User Application [Communicate Components]</router-link>
    <router-link to="/quote" class="routerLink">Quote [Advanced Components]</router-link>
+   <router-link to="/inputForms" class="routerLink">Input Forms</router-link>
   </div>
   <hr />
   <router-view />

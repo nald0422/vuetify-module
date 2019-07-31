@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import UserApp from "../components/User.vue";
+import UserApp from "../components/User/User.vue";
 
 export default {
  components: {

@@ -11,13 +11,13 @@
      <button
       class="btn btn-outline-primary"
       @click="selectedComponent = 'quoteView'"
-     >Quote Application</button>
+     >Quote</button>
     </div>
     <div class="col-sm">
-     <button class="btn btn-outline-warning" @click="selectedComponent = 'CategoryA'">Category A</button>
+     <button class="btn btn-outline-warning" @click="selectedComponent = 'CategoryA'">Quote Application</button>
     </div>
     <div class="col-sm">
-     <button class="btn btn-outline-success" @click="selectedComponent = 'CategoryB'">Category B</button>
+     <button class="btn btn-outline-success" @click="selectedComponent = 'CategoryB'">Quote Component</button>
     </div>
    </div>
    <hr />
@@ -54,9 +54,9 @@
  </div>
 </template>
 <script>
-import Quote from "../components/QuoteComp.vue";
-import QuoteA from "../components/QuoteA.vue";
-import QuoteB from "../components/QuoteB.vue";
+import Quote from "../components/Quotes/QuoteComp.vue";
+import QuoteA from "../components/Quotes/QuoteMain.vue";
+import QuoteB from "../components/Quotes/QuoteB.vue";
 import axios from "axios";
 
 export default {
@@ -86,7 +86,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .table-responsive {
  border: 1px solid #ccc;
  box-shadow: 1px 1px 2px black;

@@ -57,20 +57,22 @@
      </select>
     </div>
    </div>
-   <div class="row">
-    <app-switch v-model="dataSwitch"></app-switch>
+   <div class="row" style="margin-top: 10px;">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+     <app-switch v-model="dataSwitch"></app-switch>
+    </div>
    </div>
    <hr />
    <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-     <button class="btn btn-primary">Submit!</button>
+     <button class="btn btn-primary" @click.prevent="onSubmit()">Submit!</button>
     </div>
    </div>
   </form>
   <hr />
   <div class="row">
    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-    <div class="panel panel-default" style="margin-bottom: 10px;">
+    <div class="panel panel-default" style="margin-bottom: 10px;" v-if="isSubmitted">
      <div class="panel-heading">
       <h4>Your Data</h4>
      </div>
@@ -109,12 +111,15 @@ export default {
    selectedPriority: "Normal",
    priorities: ["Urgent", "Normal"],
    sendMail: [],
-   dataSwitch: false
+   dataSwitch: false,
+   isSubmitted: false
   };
  },
 
  methods: {
-  switch() {}
+  onSubmit() {
+   this.isSubmitted = true;
+  }
  },
 
  components: {

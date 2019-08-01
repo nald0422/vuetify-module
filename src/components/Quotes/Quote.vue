@@ -11,7 +11,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 .panel-body {
  font-family: "Arizonia", cursive;
  border-style: solid;

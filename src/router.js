@@ -8,6 +8,8 @@ import ServerStatus from '@/views/ComponentDemo.vue'
 import UserApp from '@/views/User.vue'
 import Quote from '@/views/Quote.vue'
 import Forms from '@/views/Forms.vue'
+import Directives from '@/views/Directives.vue'
+
 
 Vue.use(Router)
 
@@ -32,6 +34,11 @@ export default new Router({
             path: '/inputForms',
             name: 'inputForms',
             component: Forms
+        },
+        {
+            path: '/directives',
+            name: 'directives',
+            component: Directives
         },
         {
             path: '/serverStatus',

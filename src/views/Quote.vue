@@ -8,16 +8,19 @@
   <div class="container">
    <div class="row" style="margin-top: 20px;">
     <div class="col-sm">
+     <button class="btn btn-outline-primary" @click="selectedComponent = 'quoteView'">Quote</button>
+    </div>
+    <div class="col-sm">
      <button
-      class="btn btn-outline-primary"
-      @click="selectedComponent = 'quoteView'"
-     >Quote</button>
+      class="btn btn-outline-warning"
+      @click="selectedComponent = 'CategoryA'"
+     >Quote Application</button>
     </div>
     <div class="col-sm">
-     <button class="btn btn-outline-warning" @click="selectedComponent = 'CategoryA'">Quote Application</button>
-    </div>
-    <div class="col-sm">
-     <button class="btn btn-outline-success" @click="selectedComponent = 'CategoryB'">Quote Component</button>
+     <button
+      class="btn btn-outline-success"
+      @click="selectedComponent = 'CategoryB'"
+     >Quote Component</button>
     </div>
    </div>
    <hr />
@@ -29,27 +32,29 @@
      </keep-alive>
     </div>
    </div>
-   <div class="table-responsive">
-    <h3 class="tableTitle" style="color: dodgerblue;">TABLE FROM WEB API</h3>
-    <table class="table">
-     <thead>
-      <tr>
-       <th scope="col">User Id</th>
-       <th scope="col">Id</th>
-       <th scope="col">Title</th>
-       <th scope="col">Body</th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr v-for="item in data" :key="item.id">
-       <td>{{item.userId}}</td>
-       <td>{{item.id}}</td>
-       <td>{{item.title}}</td>
-       <td>{{item.body}}</td>
-      </tr>
-     </tbody>
-    </table>
-   </div>
+   <keep-alive>
+    <div class="table-responsive">
+     <h3 class="tableTitle" style="color: dodgerblue;">TABLE FROM WEB API</h3>
+     <table class="table">
+      <thead>
+       <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr v-for="item in data" :key="item.id">
+        <td>{{item.userId}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </keep-alive>
   </div>
  </div>
 </template>

@@ -9,11 +9,14 @@ import UserApp from '@/views/User.vue'
 import Quote from '@/views/Quote.vue'
 import Forms from '@/views/Forms.vue'
 import Directives from '@/views/Directives.vue'
+import Mixins from '@/views/Mixins.vue'
+import Routers from '@/views/Routers.vue'
 
 
 Vue.use(Router)
 
 export default new Router({
+    mode: "history",
     routes: [
         // {
         //     path: '/login',
@@ -56,7 +59,22 @@ export default new Router({
             component: Quote
         },
         {
-            path: '/about',
+            path: '/mixins',
+            name: 'mixins',
+            component: Mixins
+        },
+        {
+            path: '/routers',
+            name: 'routers',
+            component: Routers
+        },
+        {
+            path: '/routers/:id',
+            name: 'routers',
+            component: Routers
+        },
+        {
+            path: '/',
             name: 'about',
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route

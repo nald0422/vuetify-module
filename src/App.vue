@@ -1,87 +1,27 @@
 <template>
  <div id="app">
-  <div id="nav">
-   <router-link to="/about" class="routerLink">About</router-link>
-   <router-link to="/tutorial" class="routerLink">Vue demo [Global Component]</router-link>
-   <router-link to="/serverStatus" class="routerLink">Server Status [Local Component]</router-link>
-   <router-link to="/userApps" class="routerLink">User Application [Communicate Components]</router-link>
-   <router-link to="/quote" class="routerLink">Quote [Advanced Components]</router-link>
-   <router-link to="/inputForms" class="routerLink">Input Forms</router-link>
-   <router-link to="/directives" class="routerLink">Directives</router-link>
+  <div class="container" style="padding: 10px; padding-bottom: 0px;">
+   <!-- <h1>Router</h1> -->
+   <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+     <appHeader></appHeader>
+    </div>
+   </div>
   </div>
   <hr />
   <router-view />
-  <!-- <ul class="nav">
-   <li class="nav-item">
-    <a class="nav-link active" href="/about">About</a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="/tutorial">Vue demo [Global Component]</a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="/serverStatus">Server Status [Local Component]</a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="/userApps">User Application [Communicate Components]</a>
-   </li>
-  </ul>-->
-  <!-- <v-navigation-drawer app fixed clipped>
-    <v-list>
-     <v-list-tile to="/about">
-      <v-list-tile-action>
-       <v-icon>home</v-icon>
-      </v-list-tile-action>
-      <v-list-tile-content>
-       <v-list-tile-title>About</v-list-tile-title>
-      </v-list-tile-content>
-     </v-list-tile>
-     <v-list-tile to="/tutorial">
-      <v-list-tile-action>
-       <v-icon>book</v-icon>
-      </v-list-tile-action>
-      <v-list-tile-content>
-       <v-list-tile-title>Vue demo [Global Component]</v-list-tile-title>
-      </v-list-tile-content>
-     </v-list-tile>
-     <v-list-tile to="/serverStatus">
-      <v-list-tile-action>
-       <v-icon>assignment</v-icon>
-      </v-list-tile-action>
-      <v-list-tile-content>
-       <v-list-tile-title>Server Status [Local Component]</v-list-tile-title>
-      </v-list-tile-content>
-     </v-list-tile>
-     <v-list-tile to="/userApps">
-      <v-list-tile-action>
-       <v-icon>person</v-icon>
-      </v-list-tile-action>
-      <v-list-tile-content>
-       <v-list-tile-title>User Application [Communicate Components]</v-list-tile-title>
-      </v-list-tile-content>
-     </v-list-tile>
-    </v-list>
-  </v-navigation-drawer>-->
-  <!-- <v-toolbar app fixed clipped-left>
-    <v-menu :nudge-width="-100">
-     <v-toolbar-title slot="activator">Toolbar</v-toolbar-title>
-     <v-list>
-      <v-list-tile :to="'/page1'">Settings</v-list-tile>
-      <v-list-tile :to="'/page2'">
-       <v-list-tile-title v-text="'Account'"></v-list-tile-title>
-      </v-list-tile>
-     </v-list>
-    </v-menu>
-  </v-toolbar>-->
  </div>
 </template>
 
 <script>
 // import HelloWorld from "./components/HelloWorld";
 import HelloWorld from "@/components/HelloWorld";
+import Header from "./components/Header.vue";
 
 export default {
  name: "App",
  components: {
+  appHeader: Header
   //   HelloWorld
  },
  data() {
@@ -180,10 +120,5 @@ export default {
    color: #42b983;
   }
  }
-}
-
-.routerLink {
- margin-right: 20px;
- padding: 20px;
 }
 </style>

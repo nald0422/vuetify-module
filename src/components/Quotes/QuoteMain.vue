@@ -26,7 +26,6 @@
 
 <script>
 import QuoteGrid from "./QuoteGrid.vue";
-import NewQuote from "./Quote.vue";
 import Header from "./QuoteHeader.vue";
 
 export default {

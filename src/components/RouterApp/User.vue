@@ -5,6 +5,9 @@
     <h1>The User Page</h1>
     <hr />
     <p>Loaded ID: {{ id }}</p>
+    <userList></userList>
+    <hr />
+    <h5>Navigate by Code</h5>
     <button @click="navigateToHome" class="btn btn-primary">Go To Home</button>
    </div>
   </div>
@@ -12,11 +15,23 @@
 </template>
 
 <script>
+import UserList from "./UserList.vue";
+
 export default {
  data: function() {
   return {
    id: this.$route.params.id
   };
+ },
+
+ watch: {
+  $route(to, from) {
+   this.id = to.params.id;
+  }
+ },
+
+ components: {
+  userList: UserList
  },
 
  methods: {

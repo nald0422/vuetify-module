@@ -11,6 +11,7 @@ import Forms from '@/views/Forms.vue'
 import Directives from '@/views/Directives.vue'
 import Mixins from '@/views/Mixins.vue'
 import Routers from '@/views/Routers.vue'
+import routerApp from './components/RouterApp/User'
 
 
 Vue.use(Router)
@@ -65,13 +66,13 @@ export default new Router({
         },
         {
             path: '/routers',
-            name: 'routers',
+            name: 'routersApp',
             component: Routers
         },
         {
             path: '/routers/:id',
             name: 'routers',
-            component: Routers
+            component: routerApp
         },
         {
             path: '/',

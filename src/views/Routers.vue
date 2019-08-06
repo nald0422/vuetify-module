@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Users from "../components/Routers/User.vue";
+import Users from "../components/RouterApp/User.vue";
 
 export default {
  components: {

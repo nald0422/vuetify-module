@@ -13,9 +13,6 @@
   <li class="nav-item">
    <router-link to="/mixins" class="nav-link">Mixins</router-link>
   </li>
-  <li class="nav-item">
-   <router-link to="/routers" class="nav-link">Routers</router-link>
-  </li>
  </ul>
 </template>
 
@@ -30,6 +27,5 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
 

@@ -10,7 +10,9 @@
   </div>
   <!-- <hr /> -->
   <div class="block">
-   <router-view />
+   <transition name="page" mode="out-in">
+    <router-view />
+   </transition>
   </div>
  </div>
 </template>
@@ -129,5 +131,15 @@ export default {
  box-shadow: 1px 1px 2px black;
  padding: 30px;
  margin: 30px auto;
+}
+
+.page-enter-active,
+.page-leave-active {
+ transition: opacity 0.5s, transform 0.5s;
+}
+.page-enter,
+.page-leave-to {
+ opacity: 0;
+ transform: translateX(-30%);
 }
 </style>

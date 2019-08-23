@@ -10,6 +10,9 @@ import Quote from '@/views/Quote.vue'
 import Forms from '@/views/Forms.vue'
 import Directives from '@/views/Directives.vue'
 import Mixins from '@/views/Mixins.vue'
+import Computed from '@/views/Computed.vue'
+import Watchers from '@/views/Watchers.vue'
+import MainApp from '@/views/VuexStore'
 
 Vue.use(Router)
 
@@ -60,6 +63,21 @@ export default new Router({
             path: '/mixins',
             name: 'mixins',
             component: Mixins
+        },
+        {
+            path: '/computed',
+            name: 'computed',
+            component: Computed
+        },
+        {
+            path: '/watchers',
+            name: 'watchers',
+            component: Watchers
+        },
+        {
+            path: '/vuexStore',
+            name: 'vuexStore',
+            component: MainApp
         },
         {
             path: '/',

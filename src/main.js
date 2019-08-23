@@ -42,7 +42,7 @@ Vue.directive('highlight', {
 })
 
 
-Vue.filter('to-lowercase', function(value) {
+Vue.filter('to-lowercase', function (value) {
     return value.toLowerCase();
 });
 
@@ -53,11 +53,10 @@ Vue.mixin({
 });
 
 
-
 new Vue({
     myOption: 'Hello!',
     el: "#app",
     router,
     store,
-    render: h => h(App)
+    render: h => h(App),
 }).$mount('#app')

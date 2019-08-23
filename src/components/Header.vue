@@ -13,15 +13,18 @@
   <li class="nav-item">
    <router-link to="/mixins" class="nav-link">Mixins</router-link>
   </li>
+  <stateManagement></stateManagement>
  </ul>
 </template>
 
 <script>
 import dropdownComp from "./DropDownComponent.vue";
+import StateManagement from "./StateManagement.vue";
 
 export default {
  components: {
-  dropDownComp: dropdownComp
+  dropDownComp: dropdownComp,
+  stateManagement: StateManagement
  }
 };
 </script>

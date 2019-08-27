@@ -17,6 +17,12 @@ export const eventBus = new Vue({
         },
         resetAge(age) {
             this.$emit('ageReset', age)
+        },
+        incrementCtr(counter) {
+            this.$emit('incrementCtr', counter)
+        },
+        decrementCtr(counter) {
+            this.$emit('decrementCtr', counter)
         }
     }
 });

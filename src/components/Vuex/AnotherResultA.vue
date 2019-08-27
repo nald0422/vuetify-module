@@ -3,7 +3,8 @@
   <div class="container">
    <div class="row">
     <div class="col-12">
-     <p>Counter: {{ counter }}</p>
+     <p>Counter: {{ doubleCounter }}</p>
+     <!-- <p>Owned computed getter: {{ localCounter }}</p> -->
     </div>
    </div>
   </div>
@@ -11,11 +12,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
  computed: {
-  counter() {
-   return this.$store.state.counter;
-  }
+  ...mapGetters(["doubleCounter", "stringCounter"])
  }
 };
 </script>

@@ -3,8 +3,13 @@
   <div class="container">
    <div class="row">
     <div class="col-12">
-     <counter-app></counter-app>
+     <h5>Direct to Store</h5>
      <result-app></result-app>
+     <hr />
+     <h5>Direct to Getters</h5>
+     <another-result-app-a></another-result-app-a>
+     <another-result-app-b></another-result-app-b>
+     <counter-app></counter-app>
     </div>
    </div>
   </div>
@@ -14,11 +19,15 @@
 <script>
 import Counter from "./Counter.vue";
 import Result from "./Result.vue";
+import AnotherResultA from "./AnotherResultA.vue";
+import AnotherResultB from "./AnotherResultB.vue";
 
 export default {
  components: {
   counterApp: Counter,
-  resultApp: Result
+  resultApp: Result,
+  anotherResultAppA: AnotherResultA,
+  anotherResultAppB: AnotherResultB
  }
 };
 </script>

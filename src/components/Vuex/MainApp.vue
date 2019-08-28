@@ -7,8 +7,11 @@
      <result-app></result-app>
      <hr />
      <h5>Direct to Getters</h5>
-     <another-result-app-a></another-result-app-a>
      <another-result-app-b></another-result-app-b>
+     <hr />
+     <another-result-app-a></another-result-app-a>
+     <hr />
+     <h5>Mutation</h5>
      <counter-app></counter-app>
     </div>
    </div>

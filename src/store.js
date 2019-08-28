@@ -21,6 +21,12 @@ export default new Vuex.Store({
         }
     },
     actions: {
-
+        incrementAsynchronous({
+            commit
+        }) {
+            setTimeout(() => {
+                commit('increment')
+            }, 1000)
+        }
     }
 })

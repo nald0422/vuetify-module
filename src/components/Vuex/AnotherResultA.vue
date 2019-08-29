@@ -4,7 +4,7 @@
    <div class="row">
     <div class="col-12">
      <h6>/w mapGetters (Spread operator)</h6>
-     <p>Counter: {{ doubleCtr }}</p>
+     <p>Counter A: {{ doubleCtr }}</p>
      <p>Mouse clicks: {{ counterClicks }}</p>
      <!-- <p>Owned computed getter: {{ localCounter }}</p> -->
     </div>
@@ -20,7 +20,7 @@ export default {
  computed: {
   ...mapGetters({ doubleCtr: "doubleCounter" }),
   counterClicks() {
-   return this.$store.state.counter * 2;
+   return this.$store.getters.getCounter * 2;
   }
  }
 };

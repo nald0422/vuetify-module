@@ -3,7 +3,7 @@
   <div class="container">
    <div class="row">
     <div class="col-12">
-     <p>Counter: {{ counter }}</p>
+     <p>Counter B: {{ counter }}</p>
     </div>
    </div>
   </div>
@@ -14,7 +14,7 @@
 export default {
  computed: {
   counter() {
-   return this.$store.getters.doubleCounter;
+   return this.$store.getters.getCounter;
   }
  }
 };

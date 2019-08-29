@@ -3,6 +3,7 @@
   <div class="container">
    <div class="row">
     <div class="col-12">
+     <p>Counter from actions: {{getAsynchCtr}}</p>
      <button type="button" class="btn btn-primary" @click="increment()">Increment</button>
      <button
       type="button"
@@ -27,6 +28,11 @@ import { mapMutations } from "vuex";
 import { mapActions } from "vuex";
 
 export default {
+ computed: {
+  getAsynchCtr() {
+   return this.$store.getters.getAsynchCtr;
+  }
+ },
  methods: {
   ...mapMutations(["increment"]),
   //   increment() {
@@ -35,13 +41,13 @@ export default {
   decrement() {
    this.$store.commit("decrement");
   },
-  incrementAsync(){
-      this.$store.dispatch({
-  type: 'incrementAsynchronous',
-  amount: 10
-})
+  incrementAsync() {
+   this.$store.dispatch({
+    type: "incrementAsynchronous",
+    amount: 4
+   });
   }
-//   ...mapActions({incrementAsync:'incrementAsynchronous'})
+  //   ...mapActions({incrementAsync:'incrementAsynchronous'})
  }
 };
 </script>

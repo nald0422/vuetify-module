@@ -15,13 +15,14 @@
 
 <script>
 import { mapGetters } from "vuex";
+import * as types from "../../modules/types";
 
 export default {
  computed: {
-  ...mapGetters({ doubleCtr: "doubleCounter" }),
-  counterClicks() {
-   return this.$store.getters.getCounter * 2;
-  }
+  ...mapGetters({
+   doubleCtr: types.DOUBLE_COUNTER,
+   counterClicks: types.CLICK_COUNTER
+  })
  }
 };
 </script>

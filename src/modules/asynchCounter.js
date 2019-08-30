@@ -1,26 +1,28 @@
+import * as types from './types';
+
 const state = {
     asynchCounter: 0
 };
 
 const getters = {
-    getAsynchCtr: state => {
+    [types.GET_ASYNCHCOUNTER]: state => {
         return state.asynchCounter;
     }
 };
 
 const mutations = {
-    incrementAsynch(state, payload) {
+    [types.MUTATE_INCREMENT_ASYNC]: (state, payload) => {
         state.asynchCounter += payload;
     }
 };
 
 const actions = {
-    incrementAsynchronous({
+    [types.DISPATCH_INCREMENT_ASYNC]: ({
         commit
-    }, payload) {
+    }, payload) => {
         setTimeout(() => {
-            commit('incrementAsynch', payload.amount)
-        }, 500)
+            commit(types.MUTATE_INCREMENT_ASYNC, payload.by)
+        }, payload.duration)
     }
 };
 

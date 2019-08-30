@@ -3,7 +3,7 @@
   <div class="container">
    <div class="row">
     <div class="col-12">
-     <p>Counter from actions: {{getAsynchCtr}}</p>
+     <p>Counter from actions: {{AsyncCtr}}</p>
      <button type="button" class="btn btn-primary" @click="increment()">Increment</button>
      <button
       type="button"
@@ -14,7 +14,7 @@
      <button
       type="button"
       class="btn btn-primary"
-      @click="incrementAsync()"
+      @click="incrementAsync({by: 10, duration: 500})"
       style="margin-left: 5px;"
      >Increment Asynchronous</button>
     </div>
@@ -26,28 +26,27 @@
 <script>
 import { mapMutations } from "vuex";
 import { mapActions } from "vuex";
+import { mapGetters } from "vuex";
+
+import * as types from "../../modules/types";
 
 export default {
  computed: {
-  getAsynchCtr() {
-   return this.$store.getters.getAsynchCtr;
-  }
+  ...mapGetters({ AsyncCtr: types.GET_ASYNCHCOUNTER })
  },
  methods: {
-  ...mapMutations(["increment"]),
+  //   ...mapMutations({ increment: types.MUTATE_INCREMENT_COUNTER }),
+  ...mapActions({
+   increment: types.DISPATCH_COUNTER_INCREMENT,
+   decrement: types.DISPATCH_COUNTER_DECREMENT,
+   incrementAsync: types.DISPATCH_INCREMENT_ASYNC
+  })
   //   increment() {
   //    this.$store.commit('increment');
   //   },
-  decrement() {
-   this.$store.commit("decrement");
-  },
-  incrementAsync() {
-   this.$store.dispatch({
-    type: "incrementAsynchronous",
-    amount: 4
-   });
-  }
-  //   ...mapActions({incrementAsync:'incrementAsynchronous'})
+  //   decrement() {
+  //    this.$store.commit("decrement");
+  //   },
  }
 };
 </script>

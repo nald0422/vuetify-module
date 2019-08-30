@@ -11,11 +11,12 @@
 </template>
 
 <script>
+import * as types from "../../modules/types";
+import { mapGetters } from "vuex";
+
 export default {
  computed: {
-  counter() {
-   return this.$store.getters.getCounter;
-  }
+  ...mapGetters({ counter: types.GET_COUNTER })
  }
 };
 </script>

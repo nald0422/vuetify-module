@@ -1,0 +1,15 @@
+// Getters
+export const DOUBLE_COUNTER = 'counter/DOUBLE_COUNTER';
+export const CLICK_COUNTER = 'counter/CLICK_COUNTER';
+export const GET_COUNTER = 'counter/GET_COUNTER';
+export const GET_ASYNCHCOUNTER = 'asynchcounter/GET_ASYNCHCOUNTER'
+
+// Mutations
+export const MUTATE_INCREMENT_COUNTER = 'counter/MUTATE_INCREMENT_COUNTER';
+export const MUTATE_DECREMENT_COUNTER = 'counter/MUTATE_DECREMENT_COUNTER';
+export const MUTATE_INCREMENT_ASYNC = 'asynchcounter/MUTATE_UPDATE_VALUE';
+
+// Actions
+export const DISPATCH_COUNTER_INCREMENT = 'counter/DISPATCH_COUNTER_INCREMENT';
+export const DISPATCH_COUNTER_DECREMENT = 'counter/DISPATCH_COUNTER_DECREMENT';
+export const DISPATCH_INCREMENT_ASYNC = 'asynchcounter/COUNTER_INCREMENT_ASYNC';

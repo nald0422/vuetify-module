@@ -16,7 +16,7 @@ import { mapGetters } from "vuex";
 
 export default {
  computed: {
-  ...mapGetters({ counter: types.GET_COUNTER })
+  ...mapGetters({ counter: types.DOUBLE_COUNTER })
  }
 };
 </script>

@@ -1,3 +1,4 @@
+<!-- Tells the browser what version of html your page is using -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -16,60 +18,81 @@
         <li><a href="#footer">Jump to Bottom</a></li>
     </ul>
     <hr />
-    <!-- Image element with alt when in case the image fails to load. -->
-    <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+    <!-- Nested image element within anchor tag -->
+    <a href="#" target="_blank">
+        <!-- Image element with alt when in case the image fails to load. -->
+        <img class="thick-peach-border" src="https://bit.ly/fcc-relaxing-cat"
+            alt="A cute orange cat lying on its back.">
+    </a>
     <!-- Main content of the document -->
     <main>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
-        <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
-            hairball run catnip eat the grass sniff.</p>
-        <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink
-            fluffy fur catnip scratched.</p>
+        <div class="div-background">
+            <!-- Unordered list / Ordered list <ol> -->
+            <ul>
+                <!-- Items -->
+                <li>Yarn</li>
+                <li>Food</li>
+                <li>Milk</li>
+            </ul>
+        </div>
+        <hr>
+        <form id="form-background" action="/submit-cat-photo">
+            <p>Indoor-Outdoor</p>
+            <label for="indoor">
+                <input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor
+            </label>
+            <label for="outdoor">
+                <input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor
+            </label>
+            <br>
+            <label for="apple">
+                <input id="apple" type="checkbox" name="checkboxes" checked>Apple
+            </label>
+            <label for="mango">
+                <input id="mango" type="checkbox" name="checkboxes">Mango
+            </label>
+            <label for="orange">
+                <input id="orange" type="checkbox" name="checkboxes">Orange
+            </label>
+            <br>
+            <!-- Input elements used to get input from user and it's self closing tag -->
+            <input type="text" placeholder="placeholder text" required>
+            <button type="submit">Submit</button>
+        </form>
     </main>
 </body>
 <footer id="footer">Copyright Cat Photo App</footer>
+<style>
+    p {
+        /* Degrade font to monospace when Lobster isn't available. */
+        font-family: Lobster, monospace;
+    }
+
+    .thick-peach-border {
+        border-width: 10px;
+        border-style: solid;
+        border-color: peachpuff;
+    }
+
+    img {
+        border-radius: 50%;
+    }
+
+    /* class */
+    .div-background {
+        background-color: dodgerblue;
+        padding: 10px;
+    }
+
+    /* id */
+    #form-background {
+        background-color: darksalmon;
+        padding: 10px;
+    }
+
+    [type="checkbox"] {
+        margin: 10px 0 10px 0;
+    }
+</style>
 
 </html>
